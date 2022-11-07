@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { clsx } from 'clsx';
 import { Link } from 'react-router-dom';
 import HeaderNav from './HeaderNav';
 import styles from './header.module.scss';
 import { Logo } from '../Icons';
 import { Search, Cart, User } from '../Icons';
+
 function Header() {
     const [user, setUser] = useState(null);
 
@@ -26,12 +28,12 @@ function Header() {
                     
                 </div>
                 <span className={styles.tools}>
-                        <Link to="/search" className={styles.search}>
+                        <Link to="/search" className={`${styles.search} m-4`} style={{ marginRight: "10px"}}>
                             <i>
                                 <Search />
                             </i>
                         </Link>
-                        <Link to="/cart" className={styles.cart}>
+                        <Link to="/cart" className={styles.cart} style={{ marginRight: "10px"}}>
                             <i>
                                 <Cart />
                             </i>

@@ -1,4 +1,4 @@
-function Cart() {
+function User() {
     return (
         <svg
             width="24px"
@@ -23,4 +23,4 @@ function Cart() {
     );
 }
 
-export default Cart;
+export default User;

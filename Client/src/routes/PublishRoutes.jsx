@@ -7,6 +7,8 @@ const Accessories = lazy(() => import('../pages/Accessories'));
 const Watches = lazy(() => import('../pages/Watches'));
 const Gifts = lazy(() => import('../pages/Gifts'));
 const Grooming = lazy(() => import('../pages/Grooming'));
+const Login = lazy(() => import('../pages/Authentication/Login'));
+const Register = lazy(() => import('../pages/Authentication/Register'));
 
 export const publishRoutes = [
     {
@@ -62,6 +64,22 @@ export const publishRoutes = [
         element: (
             <Suspense fallback={<Loading />}>
                 <Grooming title="Skincare, Shaving and Fragance | MR PORTER" />
+            </Suspense>
+        ),
+    },
+    {
+        path: 'login',
+        element: (
+            <Suspense fallback={<Loading />}>
+                <Login title="Login | MR PORTER" />
+            </Suspense>
+        ),
+    },
+    {
+        path: 'register',
+        element: (
+            <Suspense fallback={<Loading />}>
+                <Register title="Register | MR PORTER" />
             </Suspense>
         ),
     },
