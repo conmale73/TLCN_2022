@@ -16,13 +16,24 @@
 	}
 	.top {
 		height: 50px;
+		width: 100%;
 		@include d-flex;
 		.wrap {
-			margin-top: 10px;
+			margin-top: 20px;
 			width: 1200px;
 			height: 30px;
-			@include d-flex;
+			display: flex;
 			justify-content: center;
+			align-items: center;
+			span{
+				float: right;
+				.search{
+					margin: 10px;
+				}
+				.cart{
+					margin: 10px;
+				}
+			}
 		}
 	}
 	.bottom {

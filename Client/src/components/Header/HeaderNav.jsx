@@ -6,9 +6,9 @@ function HeaderNav() {
     const anchors = [
         { name: 'Clothing', path: '/clothing', firstIcon: Clothes },
         { name: 'Shoes', path: '/shoes', firstIcon: Shoes },
-        { name: 'Accessories', path: '/accessory', firstIcon: Tie },
-        { name: 'Watches', path: '/watch', firstIcon: Watch },
-        { name: 'Gifts', path: '/gift', firstIcon: Gift },
+        { name: 'Accessories', path: '/accessories', firstIcon: Tie },
+        { name: 'Watches', path: '/watches', firstIcon: Watch },
+        { name: 'Gifts', path: '/gifts', firstIcon: Gift },
         { name: 'Grooming', path: '/grooming', firstIcon: Fragance },
         { name: 'About', path: '/about' },
         
