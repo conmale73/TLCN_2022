@@ -1,0 +1,85 @@
+.bagItem{
+    .container{
+        display: flex;
+        width: 70%;
+        margin: 0 0 20px 0;
+        .image{
+            width: 100px;
+            height: 130px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: fit;
+            }
+        }
+        .bagItemInfo{
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 0 16px;
+
+            .designer{
+                font-size: 16px;
+                font-weight: 600;
+                color: #000;
+                margin: 0 0 4px 0;
+            }
+            .name{
+                font-size: 14px;
+                font-weight: 400;
+                color: #000;
+                margin: 0 0 15px 0;
+            }
+            .price{
+                font-size: 16px;
+                font-weight: 600;
+                color: #000;
+                margin: 0 0 15px 0;
+            }
+            .size{
+                font-size: 15px;
+                font-weight: 400;
+                color: #000;
+                margin: 0 0 15px 0;
+            }
+            .quantity{
+                display: flex;
+                align-items: center;
+                .quantityTitle{
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #000;
+                    margin: 0 10px 0 0;
+                }
+                .quantityLabel{
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #000;
+                    margin: 0 10px 0 0;
+                }
+                .quantityInput{
+                    width: 80px;
+                    height: 40px;
+                    border: 1px solid #000;
+                    border-radius: 4px;
+                    text-align: center;
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #000;
+                    margin: 0 10px 0 0;
+                }
+                .quantityButton{
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid #000;
+                    border-radius: 4px;
+                    background-color: #fff;
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: #000;
+                    margin: 0 10px 0 0;
+                }
+            }
+        }
+    }
+    
+}

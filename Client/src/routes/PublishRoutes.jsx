@@ -9,6 +9,8 @@ const Gifts = lazy(() => import('../pages/Gifts'));
 const Grooming = lazy(() => import('../pages/Grooming'));
 const Login = lazy(() => import('../pages/Authentication/Login'));
 const Register = lazy(() => import('../pages/Authentication/Register'));
+const Search = lazy(() => import('../pages/Search'));
+const ShoppingBag = lazy(() => import('../pages/ShoppingBag'));
 
 export const publishRoutes = [
     {
@@ -83,4 +85,21 @@ export const publishRoutes = [
             </Suspense>
         ),
     },
+    {
+        path: 'search',
+        element: (
+            <Suspense fallback={<Loading />}>
+                <Search title="Search | MR PORTER" />
+            </Suspense>
+        ),
+    },
+    {
+        path: 'shopping-bag',
+        element: (
+            <Suspense fallback={<Loading />}>
+                <ShoppingBag title="Shopping Bag | MR PORTER" />
+            </Suspense>
+        ),
+    },
+
 ];
