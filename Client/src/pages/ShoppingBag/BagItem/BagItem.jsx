@@ -27,7 +27,7 @@ const BagItem = ({ item }) => {
                 <div className={styles.bagItemInfo}>
                     <div className={styles.designer}>{item.designer}</div>
                     <div className={styles.name}>{item.name}</div>
-                    <div className={styles.price}>{item.price}</div>
+                    <div className={styles.price}>${item.price}</div>
                     <div className={styles.size}>Size: {item.size[0]}</div>
                     <div className={styles.quantity}>
                         <div className={styles.quantityTitle}>Quantity:</div>

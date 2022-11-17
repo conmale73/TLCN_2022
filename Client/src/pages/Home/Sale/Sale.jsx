@@ -1,25 +1,22 @@
 import styles from './sale.module.scss';
 import ProductCard from '../../../components/ProductCard';
 import ListProduct from '../../../components/ListProduct';
-const Products = [
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-
-]
+import { useState, useEffect } from "react";
 const Sale = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://json.conmale73.repl.co/products`)
+            .then((res) => res.json())
+            .then((datas) => {
+                setProducts(datas);
+            });
+    }, []);
 
     return (
         <div className={styles.sale}>
             <div className={styles.title}>Sale Products</div>
-            <ListProduct products={Products} isSlide={false}></ListProduct>
+            <ListProduct products={products} isSlide={false}></ListProduct>
         </div>
     );
 }

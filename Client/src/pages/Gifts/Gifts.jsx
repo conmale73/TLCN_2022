@@ -4,6 +4,7 @@ import Divider from "../../components/Divider";
 import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
+import { useState, useEffect, useContext } from "react";
 const IntroContent = {
     title: "Gifts",
     content: "The holiday season is here again. Looking for a special gift for him? From luxury stocking fillers to our selection of this year’s most-wanted designer gifts and watches, we’ve got everything that makes a modern man tick at MR PORTER.",
@@ -14,21 +15,18 @@ const IntroContent = {
         },
     ],
 };
-const Products = [
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
 
-]
 const Watches = (title) => {
     document.title = title.title;
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://json.conmale73.repl.co/products?category=gifts`)
+            .then((res) => res.json())
+            .then((datas) => {
+                setProducts(datas);
+            });
+    }, []);
     return (
         <div className={styles.gifts}>
             <Intro
@@ -39,7 +37,7 @@ const Watches = (title) => {
             <Divider />
             <div className={styles.filterProducts}>
                 <Filter />
-                <ListProduct products={Products} isSlide={false}></ListProduct>
+                <ListProduct products={products} isSlide={false}></ListProduct>
             </div>
         </div>
     );

@@ -4,6 +4,7 @@ import Divider from "../../components/Divider";
 import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
+import { useState, useEffect, useContext } from "react";
 const IntroContent = {
     title: "Watches",
     content:
@@ -24,20 +25,19 @@ const IntroContent = {
         },
     ],
 };
-const Products = [
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-];
+
 const Watches = (title) => {
     document.title = title.title;
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://json.conmale73.repl.co/products?category=watches`)
+            .then((res) => res.json())
+            .then((datas) => {
+                setProducts(datas);
+            });
+    }, []);
     return (
         <div className={styles.watches}>
             <div className={styles.introBackground}>
@@ -51,7 +51,7 @@ const Watches = (title) => {
             <Divider />
             <div className={styles.filterProducts}>
                 <Filter />
-                <ListProduct products={Products} isSlide={false}></ListProduct>
+                <ListProduct products={products} isSlide={false}></ListProduct>
             </div>
         </div>
     );

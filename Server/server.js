@@ -2,11 +2,14 @@ require("dotenv").config();
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors') 
-
+const morgan = require('morgan')
+const productRoutes = require('./routes/product')
 const app = express()
 const path = require('path')
 
 const PORT = process.env.PORT || 5000
+
+app.use(morgan('tiny'));
 
 const connectDB = async () => {
     try {
@@ -21,6 +24,8 @@ const connectDB = async () => {
 connectDB()
 app.use(express.json());
 app.use(cors())
+app.use('/api/products', productRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)

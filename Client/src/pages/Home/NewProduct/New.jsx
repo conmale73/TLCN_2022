@@ -1,24 +1,29 @@
 import styles from './new.module.scss';
 import ProductCard from '../../../components/ProductCard';
 import ListProduct from '../../../components/ListProduct';
-const Products = [
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    
-
-]
+import { useState, useEffect } from "react";
+import { productService } from '../../../service/product.service';
 const New = () => {
-
+    const [products, setProducts] = useState([]);
+    
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch(`http://localhost:3000/api/products/`);
+            
+            if (!response.ok) {
+                console.log("error:", response);
+                return;
+              }
+            const data = await response.json();
+            setProducts(data);
+        }
+        fetchData();
+        
+    }, []);
     return (
         <div className={styles.new}>
             <div className={styles.title}>New Products</div>
-            <ListProduct products={Products} isSlide={false}></ListProduct>
+            <ListProduct products={products} isSlide={false}></ListProduct>
         </div>
     );
 }

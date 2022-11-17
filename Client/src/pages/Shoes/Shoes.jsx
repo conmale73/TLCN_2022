@@ -4,6 +4,8 @@ import Divider from "../../components/Divider";
 import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
+import { useState, useEffect, useContext } from "react";
+
 const IntroContent = {
     title: "Shoes",
     content: "Build your look from the ground up with the best selection of men’s shoes and boots, including our spring and summer edit of loafers, sandals, espadrilles and slides. Sneakerhead? You’ve come to the right place - you’ll find the latest sneaker releases from the likes of Nike, Gucci, and Balenciaga here.",
@@ -27,21 +29,20 @@ const IntroContent = {
         },
     ],
 };
-const Products = [
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
-    ProductCard,
 
-]
 const Shoes = (title) => {
     document.title = title.title;
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch(`https://json.conmale73.repl.co/products?category=shoes`)
+            .then((res) => res.json())
+            .then((datas) => {
+                setProducts(datas);
+            });
+    }, []);
+
     return (
         <div className={styles.shoes}>
             <Intro
@@ -52,7 +53,7 @@ const Shoes = (title) => {
             <Divider />
             <div className={styles.filterProducts}>
                 <Filter />
-                <ListProduct products={Products} isSlide={false}></ListProduct>
+                <ListProduct products={products} isSlide={false}></ListProduct>
             </div>
         </div>
     );
