@@ -12,7 +12,7 @@ export default function Routes() {
             element: <DefaultLayout />,
             children: [
                 ...publishRoutes,
-                // ...productDetailRoutes,
+                ...productDetailRoutes,
                 ...newsDetailRoutes,
                 { path: '*', element: <NotFound title="Not found" /> },
             ],

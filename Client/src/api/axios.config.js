@@ -1,8 +1,9 @@
 import axios from 'axios';
 
 //const apiProduction = 'https://json-kali.onrender.com';
-const apiProduction = 'https://json.conmale73.repl.co';
+const auth = 'https://jwt.conmale73.repl.co';
 const apiDev = 'https://json.conmale73.repl.co';
+const apiProduction = 'https://json.conmale73.repl.co';
 
 const baseURL = import.meta.env.MODE === 'production' ? apiProduction : apiDev;
 
@@ -34,4 +35,4 @@ axiosClient.interceptors.response.use(
         return Promise.reject(error);
     },
 );
-export default axiosClient;
+export { axiosClient, auth };

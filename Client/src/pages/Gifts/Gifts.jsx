@@ -5,6 +5,9 @@ import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllProductByCategory } from '../../redux/product/productsApi';
+
 const IntroContent = {
     title: "Gifts",
     content: "The holiday season is here again. Looking for a special gift for him? From luxury stocking fillers to our selection of this year’s most-wanted designer gifts and watches, we’ve got everything that makes a modern man tick at MR PORTER.",
@@ -19,7 +22,10 @@ const IntroContent = {
 const Watches = (title) => {
     document.title = title.title;
     const [products, setProducts] = useState([]);
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        getAllProductByCategory(dispatch, 'gifts');
+    }, []);
     useEffect(() => {
         fetch(`https://json.conmale73.repl.co/products?category=gifts`)
             .then((res) => res.json())

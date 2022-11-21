@@ -6,16 +6,28 @@ import { productService } from '../../../service/product.service';
 const New = () => {
     const [products, setProducts] = useState([]);
     
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const response = await fetch(`https://json.conmale73.repl.co/products`);
+            
+    //         if (!response.ok) {
+    //             console.log("error:", response);
+    //             return;
+    //           }
+    //         const data = await response.json();
+    //         setProducts(data);
+    //     }
+    //     fetchData();
+        
+    // }, []);
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`http://localhost:3000/api/products/`);
+            const response = await productService.getAllProducts();
             
             if (!response.ok) {
-                console.log("error:", response);
-                return;
-              }
-            const data = await response.json();
-            setProducts(data);
+                console.log(response);
+            }
+            setProducts(response);
         }
         fetchData();
         

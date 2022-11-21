@@ -8,7 +8,7 @@ export const productService = {
         return axiosClient.get(`/products/`);
     },
     getProduct(id) {
-        return axiosClient.get(`/products/${id}`);
+        return axiosClient.get(`/products?id=${id}`);
     },
     getProductByName(name) {
         return axiosClient.get(`/products/${name}`);
@@ -18,7 +18,7 @@ export const productService = {
         return axiosClient.get(`/products/?category=${category}`);
     },
     getProductBySlug(slug) {
-        return axiosClient.get(`/?slug=${slug}`);
+        return axiosClient.get(`/products?slug=${slug}`);
     },
     
     queryProduct() {

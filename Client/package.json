@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tippyjs/react": "^4.2.6",
     "@vitejs/plugin-legacy": "^2.2.0",
@@ -23,7 +24,7 @@
     "react-bootstrap-icons": "^1.9.1",
     "react-dom": "^18.2.0",
     "react-picker": "^1.2.17",
-    "react-redux": "^8.0.4",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.2",
     "react-select": "^5.6.0",
     "react-slick": "^0.29.0",

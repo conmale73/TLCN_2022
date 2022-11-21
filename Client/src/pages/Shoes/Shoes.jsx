@@ -5,7 +5,8 @@ import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
-
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllProductByCategory } from '../../redux/product/productsApi';
 const IntroContent = {
     title: "Shoes",
     content: "Build your look from the ground up with the best selection of men’s shoes and boots, including our spring and summer edit of loafers, sandals, espadrilles and slides. Sneakerhead? You’ve come to the right place - you’ll find the latest sneaker releases from the likes of Nike, Gucci, and Balenciaga here.",
@@ -32,6 +33,7 @@ const IntroContent = {
 
 const Shoes = (title) => {
     document.title = title.title;
+    const dispatch = useDispatch();
 
     const [products, setProducts] = useState([]);
 
@@ -42,7 +44,9 @@ const Shoes = (title) => {
                 setProducts(datas);
             });
     }, []);
-
+    useEffect(() => {
+        getAllProductByCategory(dispatch, 'shoes');
+    }, []);
     return (
         <div className={styles.shoes}>
             <Intro

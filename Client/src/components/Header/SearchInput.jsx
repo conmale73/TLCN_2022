@@ -9,7 +9,7 @@ export const SearchInput = () => {
     const handleSearch = (e) => {
         e.preventDefault();
         localStorage.setItem("inputSearch", inputSearch);
-        window.location.href = "/search";
+        window.location.href = "/search?key=" + inputSearch;
     };
 
     return (

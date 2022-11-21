@@ -3,27 +3,27 @@ import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Left from "./Left";
 import Right from "./Right";
-import { productService } from "../../service";
+import { productService } from '../../service/product.service';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProductDetailApi } from "../../redux/product/productsApi";
 const ProductDetail = () => {
     const {productSlug} = useParams();
     document.title = "Product Detail";
 
-    useEffect(() => {
-        async function fetchData() {
-            const response = await fetch(`http://localhost:3000/api/${productSlug}`);
-            console.log("response:", response);
+    const dispatch = useDispatch();
+    getProductDetailApi(dispatch, productSlug);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const response = await productService.getProductBySlug(productSlug);
             
-            if (!response.ok) {
-                console.log("error:", response);
-                return;
-              }
-            const data = await response.json();
-            setProducts(data);
-        }
-        fetchData();
+    //         if (!response.ok) {
+    //             console.log(response);
+    //         }
+    //         setProduct(response);
+    //     }
+    //     fetchData();
         
-    }, []);
-    getProduct();
+    // }, []);
     return (
         <div className={styles.productDetail}>
             <div className={styles.left}>

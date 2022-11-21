@@ -5,6 +5,8 @@ import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllProductByCategory } from '../../redux/product/productsApi';
 const IntroContent = {
     title: "Watches",
     content:
@@ -30,6 +32,7 @@ const Watches = (title) => {
     document.title = title.title;
 
     const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         fetch(`https://json.conmale73.repl.co/products?category=watches`)
@@ -37,6 +40,9 @@ const Watches = (title) => {
             .then((datas) => {
                 setProducts(datas);
             });
+    }, []);
+    useEffect(() => {
+        getAllProductByCategory(dispatch, 'watches');
     }, []);
     return (
         <div className={styles.watches}>

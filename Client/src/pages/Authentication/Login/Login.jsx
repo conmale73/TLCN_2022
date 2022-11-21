@@ -2,6 +2,8 @@ import styles from "./login.module.scss";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Divider from "../../../components/Divider";
+import AuthService from "../../../service/user.service";
+
 const Login = (title) => {
     document.title = title.title;
 
@@ -10,7 +12,7 @@ const Login = (title) => {
         password: "",
     });
 
-    const [alert, setAlert] = useState(null);
+    const [alert, setAlert] = useState(false);
 
     const { username, password } = loginForm;
     const onChangeLoginForm = (event) =>
@@ -19,10 +21,28 @@ const Login = (title) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(loginForm);
+        try {
+            const res = await AuthService.login(email, password);
+
+            if (res.statusCode) {
+                setTimeout(() => {
+                    localStorage.setItem("token", res.token);
+                }, 1500);
+            }
+            else {
+                setAlert(true)
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
     return (
         <div className={styles.login}>
             <div className={styles.container}>
+                {alert && (
+                        <p className={styles.alert}>Đăng nhập thất bại</p>
+                    )}
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <h1>Sign In</h1>
                     <input

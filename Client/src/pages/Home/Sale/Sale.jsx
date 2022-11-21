@@ -1,6 +1,6 @@
-import styles from './sale.module.scss';
-import ProductCard from '../../../components/ProductCard';
-import ListProduct from '../../../components/ListProduct';
+import styles from "./sale.module.scss";
+import ProductCard from "../../../components/ProductCard";
+import ListProduct from "../../../components/ListProduct";
 import { useState, useEffect } from "react";
 const Sale = () => {
     const [products, setProducts] = useState([]);
@@ -19,5 +19,5 @@ const Sale = () => {
             <ListProduct products={products} isSlide={false}></ListProduct>
         </div>
     );
-}
+};
 export default Sale;

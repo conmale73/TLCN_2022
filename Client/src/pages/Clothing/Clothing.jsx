@@ -5,8 +5,11 @@ import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
+
 import { productService } from "../../service/product.service";
 import { ProductContext } from "../../context/ProductContext";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllProductByCategory } from "../../redux/product/productsApi";
 
 const IntroContent = {
     title: "Clothing",
@@ -43,6 +46,7 @@ const IntroContent = {
 
 const Clothing = (title) => {
     document.title = title.title;
+    const dispatch = useDispatch();
 
     const [products, setProducts] = useState([]);
 
@@ -53,8 +57,9 @@ const Clothing = (title) => {
                 setProducts(datas);
             });
     }, []);
-
-    console.log(products);
+    useEffect(() => {
+        getAllProductByCategory(dispatch, "clothing");
+    }, []);
     return (
         <div className={styles.clothing}>
             <Intro

@@ -5,6 +5,8 @@ import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllProductByCategory } from '../../redux/product/productsApi';
 const IntroContent = {
     title: "Grooming",
     content:
@@ -33,6 +35,7 @@ const IntroContent = {
 const Grooming = (title) => {
     document.title = title.title;
     const [products, setProducts] = useState([]);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         fetch(`https://json.conmale73.repl.co/products?category=grooming`)
@@ -40,6 +43,9 @@ const Grooming = (title) => {
             .then((datas) => {
                 setProducts(datas);
             });
+    }, []);
+    useEffect(() => {
+        getAllProductByCategory(dispatch, 'grooming');
     }, []);
     return (
         <div className={styles.grooming}>
