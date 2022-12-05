@@ -34,6 +34,16 @@
                 font-weight: 600;
                 color: #000;
                 margin: 0 0 15px 0;
+                .priceBefore{
+                    text-decoration: line-through;
+                    font-weight: 200;
+                    font-size: 14px;
+                }
+                span{
+                    margin-left: 10px;
+                    text-decoration: line-through;
+                    font-size: 14px;
+                }
             }
             .size{
                 font-size: 15px;
@@ -56,28 +66,15 @@
                     color: #000;
                     margin: 0 10px 0 0;
                 }
-                .quantityInput{
-                    width: 80px;
-                    height: 40px;
-                    border: 1px solid #000;
-                    border-radius: 4px;
-                    text-align: center;
-                    font-size: 15px;
-                    font-weight: 400;
-                    color: #000;
-                    margin: 0 10px 0 0;
-                }
-                .quantityButton{
-                    width: 40px;
-                    height: 40px;
-                    border: 1px solid #000;
-                    border-radius: 4px;
-                    background-color: #fff;
-                    font-size: 15px;
-                    font-weight: 400;
-                    color: #000;
-                    margin: 0 10px 0 0;
-                }
+                
+                
+            }
+            .removeItem{
+                font-size: 15px;
+                font-weight: 400;
+                color: #000;
+                margin: 15px 0 15px 0;
+                cursor: pointer;
             }
         }
     }

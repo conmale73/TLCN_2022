@@ -5,12 +5,13 @@ import Filter from "../../components/Filter";
 import ProductCard from "../../components/ProductCard";
 import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { getAllProductByCategory } from '../../redux/product/productsApi';
+import { useSelector, useDispatch } from "react-redux";
+import { getAllProductByCategory } from "../../redux/product/productsApi";
 
 const IntroContent = {
     title: "Gifts",
-    content: "The holiday season is here again. Looking for a special gift for him? From luxury stocking fillers to our selection of this year’s most-wanted designer gifts and watches, we’ve got everything that makes a modern man tick at MR PORTER.",
+    content:
+        "The holiday season is here again. Looking for a special gift for him? From luxury stocking fillers to our selection of this year’s most-wanted designer gifts and watches, we’ve got everything that makes a modern man tick at MR PORTER.",
     links: [
         {
             content: "Gift for kids",
@@ -23,8 +24,10 @@ const Watches = (title) => {
     document.title = title.title;
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
+    const results = products.length;
+
     useEffect(() => {
-        getAllProductByCategory(dispatch, 'gifts');
+        getAllProductByCategory(dispatch, "gifts");
     }, []);
     useEffect(() => {
         fetch(`https://json.conmale73.repl.co/products?category=gifts`)
@@ -42,7 +45,7 @@ const Watches = (title) => {
             ></Intro>
             <Divider />
             <div className={styles.filterProducts}>
-                <Filter />
+                <Filter results={results}/>
                 <ListProduct products={products} isSlide={false}></ListProduct>
             </div>
         </div>

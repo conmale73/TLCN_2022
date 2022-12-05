@@ -33,6 +33,7 @@ const Watches = (title) => {
 
     const [products, setProducts] = useState([]);
     const dispatch = useDispatch();
+    const results = products.length;
 
     useEffect(() => {
         fetch(`https://json.conmale73.repl.co/products?category=watches`)
@@ -56,7 +57,7 @@ const Watches = (title) => {
 
             <Divider />
             <div className={styles.filterProducts}>
-                <Filter />
+                <Filter results={results}/>
                 <ListProduct products={products} isSlide={false}></ListProduct>
             </div>
         </div>

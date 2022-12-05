@@ -3,8 +3,8 @@ import { useState } from "react";
 import { ChevronDown } from "react-bootstrap-icons";
 
 const FilterOptions = ["Category", "Size", "Color", "Price"];
-const Filter = () => {
-    const [results, setResults] = useState(12312);
+const Filter = ({results}) => {
+
     return (
         <div className={styles.filter}>
             <div className="">{results} results</div>

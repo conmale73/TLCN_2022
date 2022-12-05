@@ -20,6 +20,17 @@
         .price{
             font-size: 30px;
             font-weight: 400;
+            
+            .priceBefore{
+                text-decoration: line-through;
+                font-weight: 200;
+                font-size: 20px;
+            }
+            span{
+                margin-left: 10px;
+                text-decoration: line-through;
+                font-size: 20px;
+            }
         }
         .size{
             font-size: 20px;

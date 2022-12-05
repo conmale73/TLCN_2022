@@ -8,9 +8,10 @@ const Watches = lazy(() => import('../pages/Watches'));
 const Gifts = lazy(() => import('../pages/Gifts'));
 const Grooming = lazy(() => import('../pages/Grooming'));
 const Login = lazy(() => import('../pages/Authentication/Login'));
-const Register = lazy(() => import('../pages/Authentication/Register'));
+const Profile = lazy(() => import('../pages/Authentication/Profile'));
 const Search = lazy(() => import('../pages/Search'));
 const ShoppingBag = lazy(() => import('../pages/ShoppingBag'));
+const Authentication = lazy(() => import('../pages/Authentication'));
 
 export const publishRoutes = [
     {
@@ -70,6 +71,14 @@ export const publishRoutes = [
         ),
     },
     {
+        path: 'account',
+        element: (
+            <Suspense fallback={<Loading />}>
+                <Authentication title="MR PORTER" />
+            </Suspense>
+        ),
+    },
+    {
         path: 'login',
         element: (
             <Suspense fallback={<Loading />}>
@@ -78,10 +87,10 @@ export const publishRoutes = [
         ),
     },
     {
-        path: 'register',
+        path: 'profile',
         element: (
             <Suspense fallback={<Loading />}>
-                <Register title="Register | MR PORTER" />
+                <Profile title="Profile | MR PORTER" />
             </Suspense>
         ),
     },

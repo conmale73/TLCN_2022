@@ -37,6 +37,8 @@ const Shoes = (title) => {
 
     const [products, setProducts] = useState([]);
 
+    const results = products.length;
+
     useEffect(() => {
         fetch(`https://json.conmale73.repl.co/products?category=shoes`)
             .then((res) => res.json())
@@ -56,7 +58,7 @@ const Shoes = (title) => {
             ></Intro>
             <Divider />
             <div className={styles.filterProducts}>
-                <Filter />
+                <Filter results={results}/>
                 <ListProduct products={products} isSlide={false}></ListProduct>
             </div>
         </div>
