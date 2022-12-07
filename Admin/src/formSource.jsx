@@ -34,50 +34,50 @@ export const userInputs = [
 export const productInputs = [
   {
     id: 1,
-    label: "Tên sản phẩm",
+    label: "Product Name",
     type: "text",
-    placeholder: "Apple Macbook Pro",
-    title:'title',
+    placeholder: "Straight-Leg Shell Trousers",
+    title:'name',
   },{
     id: 2,
     label: "Slug",
     type: "text",
-    placeholder: "apple-macbook-pro",
+    placeholder: "straight-leg-shell-trousers",
     title:'slug',
   },
   {
     id: 3,
-    label: "Mô tả",
+    label: "Description",
     type: "text",
-    placeholder: "Mô tả",
-    title:'info',
+    placeholder: "Description",
+    title:'description',
   },
   {
     id: 4,
-    label: "Hãng sản xuất",
+    label: "Designer",
     type: "text",
-    placeholder: "Hãng sản xuất   ",
-    title:'brand',
+    placeholder: "Designer   ",
+    title:'designer',
   },
   {
     id: 5,
-    label: "Giá sản phẩm",
+    label: "Price",
     type: "text",
     placeholder: "100",
     title:'price',
   },
   {
     id: 6,
-    label: "Khuyến mãi",
+    label: "Discount",
     type: "text",
-    placeholder: "% giảm giá",
+    placeholder: "% discount",
     title:'discount',
   },
   {
     id: 7,
-    label: "Màu sắc",
+    label: "Colors",
     type: "text",
-    placeholder: "Màu sắc",
+    placeholder: "Colors",
     title:'colors',
   },
 ];
@@ -86,28 +86,33 @@ export const productInputs = [
 export const typeProduct = [
   {
     id: 1,
-    label: "Điện thoại",
-    type: 'dienthoai'
+    label: "Clothing",
+    type: 'clothing'
   },
   {
     id: 2,
-    label: "Laptop",
-    type: 'laptop'
+    label: "Shoes",
+    type: 'shoes'
   },
   {
     id: 3,
-    label: "Phụ kiện",
-    type: 'phukien'
+    label: "Accessories",
+    type: 'accessories'
   },
   {
     id: 4,
-    label: "Đồng hồ",
-    type: 'watch'
+    label: "Watches",
+    type: 'watches'
   },
   {
     id: 5,
-    label: "Đồng hồ thông minh",
-    type: 'smartwatch'
+    label: "Gifts",
+    type: 'gifts'
+  },
+  {
+    id: 5,
+    label: "Grooming",
+    type: 'grooming'
   },
 ];
 export const phoneProduct = [

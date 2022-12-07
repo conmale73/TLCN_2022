@@ -56,14 +56,17 @@ const Accessories = (title) => {
     }, []);
     return (
         <div className={styles.accessories}>
-            <Intro
-                title={IntroContent.title}
-                content={IntroContent.content}
-                links={IntroContent.links}
-            ></Intro>
+            <div className={styles.introBackground}>
+                <Intro
+                    title={IntroContent.title}
+                    content={IntroContent.content}
+                    links={IntroContent.links}
+                ></Intro>
+            </div>
+
             <Divider />
             <div className={styles.filterProducts}>
-                <Filter results={results}/>
+                <Filter results={results} />
                 <ListProduct products={products} isSlide={false}></ListProduct>
             </div>
         </div>

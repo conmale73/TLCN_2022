@@ -28,6 +28,26 @@ const OrderTable = (props) => {
             })) || []
         );
     });
+    const handleReceived = async (e) => {
+        e.preventDefault();
+        if (confirm("Confirm order received?")) {
+            const id = e.target.id;
+            const data = JSON.stringify({ status: "Received" });
+            const res = await orderService.updateOrder(id, data);
+            if (res) {
+                alert("Confirm order successfully");
+                setStatus((e) => {
+                    const data = e.map((order) => {
+                        return order.id == id
+                            ? { id: order.id, status: "Received" }
+                            : { id: order.id, status: order.status };
+                    });
+                    return data;
+                });
+            }
+            window.location.reload();
+        }
+    }
     const handleCancel = async (e) => {
         if (confirm("Are you sure to cancel this order?")) {
             const id = e.target.id;
@@ -67,6 +87,7 @@ const OrderTable = (props) => {
                     const styleStatus = style(order.status);
                     const displayDetail = index === orderDetail.index;
                     const displayCancelBtn = order.status != "Order Placed";
+                    const displayReceivedBtn = order.status != "Shipping";
                     const styleDisable = "bg-gray-100";
                     return (
                         <Fragment key={index}>
@@ -110,6 +131,16 @@ const OrderTable = (props) => {
                                     )} */}
                                 </Table.Cell>
                                 <Table.Cell>
+                                    <button
+                                        disabled={displayReceivedBtn}
+                                        id={order.id}
+                                        className={clsx(
+                                            "bg-green-500 mr-3 text-2xl font-medium p-4 rounded-lg  text-white",
+                                            displayReceivedBtn &&
+                                                "!bg-gray-100 !text-gray-700"
+                                        )}
+                                        onClick={handleReceived}
+                                    >Confirm Received</button>
                                     <button
                                         disabled={displayCancelBtn}
                                         id={order.id}

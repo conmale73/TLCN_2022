@@ -47,7 +47,7 @@ const Datatable = ({ rows, title, productColumns, type = '', reply = false }) =>
     // if (type === 'products') {
     //   productService.deleteProductByID(id)
     // }
-    if (confirm("Bạn có chắc muốn xóa sản phẩm này không") == true) {
+    if (confirm("Are you sure to delete this?") === true) {
       productService.deleteProductByID(id)
       setTimeout(() => {
         window.location.reload()

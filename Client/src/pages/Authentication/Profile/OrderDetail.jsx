@@ -66,7 +66,7 @@ function OrderDetail(props) {
                                     {item.name}
                                 </p>
                                 <p className="text-left text-x1 ml-2">
-                                    Size: {item.selectedSize.label}
+                                    Size: {item.selectedSize?.label}
                                 </p>
                                 <p className="text-left text-x1 ml-2">
                                     Quantity: {item.quantity}

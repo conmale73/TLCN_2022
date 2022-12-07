@@ -22,7 +22,7 @@ const New = () => {
     // }, []);
     useEffect(() => {
         async function fetchData() {
-            const response = await productService.getAllProducts();
+            const response = await productService.getNewProducts();
             
             if (!response.ok) {
                 console.log(response);

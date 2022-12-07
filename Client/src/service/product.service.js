@@ -13,7 +13,9 @@ export const productService = {
     getProductByName(name) {
         return axiosClient.get(`/products/${name}`);
     },
-    
+    getNewProducts() {
+        return axiosClient.get(`/products?new=true`);
+    },
     getProductByCategory(category) {
         return axiosClient.get(`/products/?category=${category}`);
     },
