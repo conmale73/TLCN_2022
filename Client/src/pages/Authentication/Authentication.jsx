@@ -1,19 +1,22 @@
 import styles from "./authentication.module.scss";
+import { useEffect } from 'react';
 import Login from "./Login";
 import Profile from "./Profile";
 import { useDispatch } from "react-redux";
-import Welcome from "./Welcome";
+import { getHistoryOrders } from '../../redux/history/historyOrdersApi'
 
 const Authentication = (title) => {
     document.title = title.title;
 
-    let user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem("user"));
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        getHistoryOrders(dispatch, user?.phone);
+    }, [user?.phone]);
     return (
         <div className={styles.authentication}>
-            {/* <div className={styles.welcome}>
-                <Welcome />
-            </div> */}
+            
             {user ? <Profile /> : <Login />}
         </div>
     );

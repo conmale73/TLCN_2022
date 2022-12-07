@@ -27,7 +27,7 @@ const Welcome = () => {
     return (
         <div className="flex justify-between my-4">
             <div>
-                Hello &nbsp;
+                Welcome &nbsp;
                 <b id="profileName" className="">
                     {user?.sex} {user?.name} &nbsp;
                 </b>
@@ -37,7 +37,7 @@ const Welcome = () => {
             </div>
 
             <div className="">
-                <span className="cursor-pointer text-yellow-500" onClick={(e) => handleLogOut(e)}>
+                <span className="cursor-pointer text-yellow-700" onClick={(e) => handleLogOut(e)}>
                     Log Out
                 </span>
             </div>

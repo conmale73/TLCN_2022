@@ -5,11 +5,13 @@ export const orders = createSlice({
     name: 'orders',
     initialState: {
         order: {
-            //data: [],
-            data: order,
+            data: [],
         },
     },
     reducers: {
+        getOrderByPhone: (state, action) => {
+            state.order.data = action.payload;
+        },
         postOrder: (state, action) => {
             state.order.data = action.payload;
             const orderData = JSON.stringify(action.payload)
@@ -17,7 +19,10 @@ export const orders = createSlice({
                 localStorage.setItem("order", orderData)
             }
         },
+        updateOrder: (state, action) => {
+            state.order.data = action.payload;
+        }
     },
 });
-export const { postOrder } = orders.actions;
+export const { getOrderByPhone ,postOrder } = orders.actions;
 export default orders.reducer;

@@ -1,6 +1,4 @@
 import styles from "./profile.module.scss";
-import Left from "./Left";
-import Right from "./Right";
 import { useState } from "react";
 import clsx from "clsx";
 import AccountDetail from "./AccountDetail";

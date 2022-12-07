@@ -22,6 +22,7 @@ export const SearchInput = () => {
                     value={inputSearch}
                     placeholder="Search"
                     onChange={(e) => setInputSearch(e.target.value)}
+                    style={{ fontSize: "20px" }}
                 />
                 <label
                     className={`${styles.button} ${styles.searchbutton}`}

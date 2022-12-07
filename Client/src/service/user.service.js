@@ -6,5 +6,8 @@ export const userServices = {
     },
     getUserByPhone: (phone) => {
         return axiosClient.get(`/users?phone=${phone}`);
+    },
+    updateUser: (data) => {
+        return axiosClient.patch(`/users/${data.id}`, data);
     }
 };
