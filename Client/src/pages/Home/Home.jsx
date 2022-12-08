@@ -3,7 +3,7 @@ import BigBanner from "./BigBanner";
 import Divider from "../../components/Divider";
 import Promo from "./Promo";
 import Sale from "./Sale";
-import New from './NewProduct'
+import New from "./NewProduct";
 const Home = (props) => {
     document.title = props.title;
     return (
@@ -14,9 +14,9 @@ const Home = (props) => {
             <Divider />
             <img src="//cache.mrporter.com/content/images/cms/ycm/resource/blob/23579154/87300c93e472f1057389b4a34e4e609d/desktop-jpg-1--data.jpg/w1920_q80.jpg"></img>
             <Divider />
-            <Sale />
+            <New />
             <Divider />
-            <New/>
+            <Sale />
             <Divider />
         </div>
     );

@@ -7,7 +7,7 @@ import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductByCategory } from "../../redux/product/productsApi";
-
+import { productService } from "../../service";
 const IntroContent = {
     title: "Gifts",
     content:
@@ -27,14 +27,16 @@ const Watches = (title) => {
     const results = products.length;
 
     useEffect(() => {
-        getAllProductByCategory(dispatch, "gifts");
-    }, []);
-    useEffect(() => {
-        fetch(`https://json.conmale73.repl.co/products?category=gifts`)
-            .then((res) => res.json())
-            .then((datas) => {
-                setProducts(datas);
-            });
+        async function fetchData() {
+            const response = await productService.getProductByCategory("gifts");
+            
+            if (!response.ok) {
+                console.log(response);
+            }
+            setProducts(response);
+        }
+        fetchData();
+        
     }, []);
     return (
         <div className={styles.gifts}>

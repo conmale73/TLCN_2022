@@ -7,6 +7,7 @@ import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProductByCategory } from "../../redux/product/productsApi";
+import { productService } from "../../service";
 
 const IntroContent = {
     title: "Accessories",
@@ -15,7 +16,7 @@ const IntroContent = {
     links: [
         {
             content: "Backpacks",
-            key: "backpacks",
+            key: "backpack",
         },
 
         {
@@ -28,11 +29,11 @@ const IntroContent = {
         },
         {
             content: "Belts",
-            key: "Belts",
+            key: "belt",
         },
         {
             content: "Wallets",
-            key: "wallets",
+            key: "wallet",
         },
     ],
 };
@@ -45,14 +46,16 @@ const Accessories = (title) => {
     const results = products.length;
 
     useEffect(() => {
-        fetch(`https://json.conmale73.repl.co/products?category=accessories`)
-            .then((res) => res.json())
-            .then((datas) => {
-                setProducts(datas);
-            });
-    }, []);
-    useEffect(() => {
-        getAllProductByCategory(dispatch, "accessories");
+        async function fetchData() {
+            const response = await productService.getProductByCategory("accessories");
+            
+            if (!response.ok) {
+                console.log(response);
+            }
+            setProducts(response);
+        }
+        fetchData();
+        
     }, []);
     return (
         <div className={styles.accessories}>

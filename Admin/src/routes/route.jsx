@@ -18,7 +18,7 @@ import ReviewsView from "../pages/review/ReviewsView";
 import Layout from "~/components/layout";
 import {typeProduct} from "../formSource";
 import EditProduct from '../pages/new/newPhone/EditProduct'
-import NewPhone from '../pages/new/newPhone/NewPhone'
+import NewProduct from '../pages/new/newPhone/NewProduct'
 export const AdminRoutes = () => {
     return (
         <Routes>
@@ -51,7 +51,7 @@ export const AdminRoutes = () => {
                     <Route
                         path="new"
                         element={
-                            <NewPhone
+                            <NewProduct
                                 inputs={typeProduct}
                                 title="Add New Product"
                             />

@@ -10,7 +10,7 @@ const OrderTable = (props) => {
     const style = (text) => {
         switch (text) {
             case "Order Placed":
-                return "text-gray-500 uppercase font-bold";
+                return "text-black-500 uppercase font-bold";
             case "Shipping":
                 return "text-blue-400 uppercase font-bold";
             case "Cancelled":

@@ -7,6 +7,7 @@ import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllProductByCategory } from '../../redux/product/productsApi';
+import { productService } from '../../service';
 const IntroContent = {
     title: "Grooming",
     content:
@@ -39,14 +40,16 @@ const Grooming = (title) => {
     const results = products.length;
 
     useEffect(() => {
-        fetch(`https://json.conmale73.repl.co/products?category=grooming`)
-            .then((res) => res.json())
-            .then((datas) => {
-                setProducts(datas);
-            });
-    }, []);
-    useEffect(() => {
-        getAllProductByCategory(dispatch, 'grooming');
+        async function fetchData() {
+            const response = await productService.getProductByCategory("grooming");
+            
+            if (!response.ok) {
+                console.log(response);
+            }
+            setProducts(response);
+        }
+        fetchData();
+        
     }, []);
     return (
         <div className={styles.grooming}>

@@ -6,6 +6,7 @@ import { userServices } from "../../../service/user.service";
 import { auth } from "../../../../firebase";
 import clsx from "clsx";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import moment from 'moment'
 
 const Login = () => {
     const [txtPhoneNumber, setTxtPhoneNumber] = useState("");
@@ -58,12 +59,24 @@ const Login = () => {
                 });
         }
     };
+    const generateString = (length) => {
+        const characters = "0123456789";
+        let result = " ";
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(
+                Math.floor(Math.random() * charactersLength)
+            );
+        }
 
+        return parseInt(result);
+    };
     const submitOTP = (e) => {
         e.preventDefault();
 
         const code = otp;
 
+        
         window.confirmationResult
             .confirm(code)
             .then((result) => {
@@ -73,6 +86,23 @@ const Login = () => {
                     if (res.length > 0) {
                         localStorage.setItem("user", JSON.stringify(res[0]));
                         window.location.reload();
+                    } else {
+                        const dataPost = {
+                            id: generateString(5),
+                            name: "Khách hàng",
+                            address: {
+                                "homeAdd": "",
+                                "ward": "",
+                                "district": "",
+                                "city": ""
+                            },
+                            phone: txtPhoneNumber,
+                            create_date: moment().format('HH:MM MM/DD, YYYY'),
+                        }
+                        userServices.createUser(dataPost).then((res) => {
+                            localStorage.setItem("user", JSON.stringify(dataPost));
+                            window.location.reload();
+                        });
                     }
                 });
             })

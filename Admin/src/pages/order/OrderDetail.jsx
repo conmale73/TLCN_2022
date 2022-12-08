@@ -13,13 +13,13 @@ function OrderDetail(props) {
     const style = (text) => {
         switch (text) {
             case "Order Placed":
-                return "text-green-400";
+                return "text-black-500";
             case "Shipping":
                 return "text-blue-400";
             case "Cancelled":
                 return "text-red-400";
             case "Received":
-                return "text-gray-400";
+                return "text-green-400";
         }
     };
     return (
@@ -57,7 +57,7 @@ function OrderDetail(props) {
                                     {item.name}
                                 </p>
                                 <p className="text-left text-x1 ml-2">
-                                    Size: {item.selectedSize.label}
+                                    Size: {item.selectedSize?.label}
                                 </p>
                                 <p className="text-left text-x1 ml-2">
                                     Quantity: {item.quantity}

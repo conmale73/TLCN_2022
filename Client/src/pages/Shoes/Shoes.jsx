@@ -7,6 +7,7 @@ import ListProduct from "../../components/ListProduct";
 import { useState, useEffect, useContext } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllProductByCategory } from '../../redux/product/productsApi';
+import { productService } from "../../service";
 const IntroContent = {
     title: "Shoes",
     content: "Build your look from the ground up with the best selection of men’s shoes and boots, including our spring and summer edit of loafers, sandals, espadrilles and slides. Sneakerhead? You’ve come to the right place - you’ll find the latest sneaker releases from the likes of Nike, Gucci, and Balenciaga here.",
@@ -40,14 +41,16 @@ const Shoes = (title) => {
     const results = products.length;
 
     useEffect(() => {
-        fetch(`https://json.conmale73.repl.co/products?category=shoes`)
-            .then((res) => res.json())
-            .then((datas) => {
-                setProducts(datas);
-            });
-    }, []);
-    useEffect(() => {
-        getAllProductByCategory(dispatch, 'shoes');
+        async function fetchData() {
+            const response = await productService.getProductByCategory("shoes");
+            
+            if (!response.ok) {
+                console.log(response);
+            }
+            setProducts(response);
+        }
+        fetchData();
+        
     }, []);
     return (
         <div className={styles.shoes}>

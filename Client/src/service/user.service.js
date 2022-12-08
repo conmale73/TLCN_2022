@@ -9,5 +9,8 @@ export const userServices = {
     },
     updateUser: (data) => {
         return axiosClient.patch(`/users/${data.id}`, data);
+    },
+    createUser: (data) => {
+        return axiosClient.post(`/users`, data);
     }
 };

@@ -2,7 +2,7 @@ import "../new.scss";
 
 import { useState, useEffect } from "react";
 import { productInputs } from "../../../formSource";
-
+import { DesignerService } from "../../../services";
 import Select from "react-select";
 
 const CategoryOptions = [
@@ -80,7 +80,7 @@ const NewPhone = ({ inputs, title }) => {
         const oID = cuttingString(imageUrls);
         const title = document.getElementById("name").value;
         const price = document.getElementById("price").value;
-        const brand = document.getElementById("designer").value;
+        const brand = document.getElementById("designer").value.toUpperCase();
         const discount = document.getElementById("discount").value;
         const colors = document.getElementById("colors").value;
         const info = document.getElementById("description").value;
@@ -296,12 +296,13 @@ const NewPhone = ({ inputs, title }) => {
             return response.json(); // parses JSON response into native JavaScript objects
         }
 
-        postData("https://json.conmale73.repl.co/products", dataPost).then(
+        postData(" http://localhost:3000/products", dataPost).then(
             (data) => {
                 console.log(data); // JSON data parsed by `data.json()` call
                 alert("Add product success!");
             }
         );
+        
     };
     return (
         <div className="new">
