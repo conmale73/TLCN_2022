@@ -10,6 +10,9 @@ export const users = createSlice({
         },
     },
     reducers: {
+        getUser: (state, action) => {
+            state.user.data = action.payload;
+        },
         updateUser: (state, action) => {
             state.user.data = action.payload;
             

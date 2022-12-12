@@ -192,12 +192,12 @@ const Login = () => {
                         type="number"
                         maxLength="6"
                         value={otp}
-                        placeholder="Nhập mã xác nhận"
+                        placeholder="Enter OTP"
                         onChange={(e) => setOtp(e.target.value)}
                         className={styles.input}
                     ></input>
                     <button className={styles.btn} id="submitOTP">
-                        Tiếp tục
+                        CONTINUE
                     </button>
                 </form>
                 {/* <a className="resend-sms" href="javascript:GetVerifyCode(1)">
@@ -208,7 +208,7 @@ const Login = () => {
                     className={styles.btnChangeNum}
                     onClick={(e) => changeNum(e)}
                 >
-                    Thay đổi số điện thoại
+                    Change phone number
                 </a>
             </div>
         </div>

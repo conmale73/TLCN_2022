@@ -42,7 +42,6 @@ const Search = (title) => {
     }
     useEffect(() => {
         async function fetchData() {
-            const response = await getResult(dispatch, inputSearch);
             let getValue = inputSearch.replace(/\s/g, '');
             let url = match(getValue, config);
             if (url === null) {
@@ -51,9 +50,7 @@ const Search = (title) => {
             else {
                 navigate(`/${url}`);
             }
-            if (!response.ok) {
-                console.log(response);
-            }
+            
         }
         fetchData();
     }, []);

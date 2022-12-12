@@ -94,7 +94,7 @@ const NewPhone = ({ inputs, title }) => {
                     image: imageUrls,
                     name: title,
                     price: parseInt(price),
-                    slug: slug,
+                    slug: id + "-" + slug,
                     discount: parseInt(discount),
                     star: 0,
                     totalVote: 0,

@@ -33,7 +33,7 @@ export const AdminRoutes = () => {
                 <Route index element={<Home />} />
                 <Route
                     path="orders"
-                    element={<Order title="Đơn hàng - thegioididong" />}
+                    element={<Order title="Orders - MR PORTER" />}
                 />
                 <Route path="users">
                     <Route index element={<ListUser />} />
@@ -47,7 +47,7 @@ export const AdminRoutes = () => {
                 </Route>
                 <Route path="products">
                     <Route index element={<ListProduct />} />
-                    <Route path=":productId" element={<EditProduct inputs={typeProduct} title="Add New Product" />} />
+                    <Route path=":productId" element={<EditProduct inputs={typeProduct} title="Edit Product" />} />
                     <Route
                         path="new"
                         element={

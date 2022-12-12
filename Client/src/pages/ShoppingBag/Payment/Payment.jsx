@@ -11,7 +11,7 @@ import { useCart } from "../../../hooks";
 import { useDispatch } from "react-redux";
 import { clearCart } from "../../../redux/shopping-cart/cartItemsSlide";
 import { postOrders } from "../../../redux/order/ordersApi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Payment = (total) => {
     const cartData = useCart();
@@ -22,7 +22,19 @@ const Payment = (total) => {
     const currency = "USD";
     const style = { layout: "vertical" };
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
+    const handleClick = () => {
+        if (
+            user.address.homeAdd === "" ||
+            user.address.ward === "" ||
+            user.address.district === "" ||
+            user.address.city === ""
+        ) {
+            alert("Please update your address before checkout");
+            navigate("/account")
+        }
+    };
     const handleApprove = (data, actions) => {
         const dataPost = {
             id: data.orderID,
@@ -61,6 +73,7 @@ const Payment = (total) => {
                     }}
                 >
                     <PayPalButtons
+                        onClick={handleClick}
                         style={style}
                         disabled={false}
                         forceReRender={[amount, currency, style]}

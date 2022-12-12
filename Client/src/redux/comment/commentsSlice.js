@@ -6,6 +6,9 @@ export const comments = createSlice({
         comment: {
             data: [],
         },
+        allComments: {
+            data: [],
+        }
     },
     reducers: {
         getComment: (state, action) => {
@@ -14,7 +17,10 @@ export const comments = createSlice({
         postComment: (state, action) => {
             state.comment.data = [...state.comment.data, action.payload];
         },
+        getAllComment: (state, action) => {
+            state.allComments.data = action.payload;
+        }
     },
 });
-export const { getComment, postComment } = comments.actions;
+export const { getComment, postComment, getAllComment } = comments.actions;
 export default comments.reducer;

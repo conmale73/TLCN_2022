@@ -4,8 +4,10 @@ import Divider from "../../components/Divider";
 import Promo from "./Promo";
 import Sale from "./Sale";
 import New from "./NewProduct";
+
 const Home = (props) => {
     document.title = props.title;
+
     return (
         <div className={styles.home}>
             <BigBanner />
