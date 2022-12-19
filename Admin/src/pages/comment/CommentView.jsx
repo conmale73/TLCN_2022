@@ -29,7 +29,7 @@ const CommentView = () => {
                     title=""
                     productColumns={commentColumns}
                     type="comment"
-                    reply={true}
+                    view={false}
                 />
             </div>
         </div>

@@ -88,7 +88,7 @@ function CreatePostModal() {
     const classes = useStyles()
     const body=(
         <div className={classes.paper} id='simple-modal-title' ref={more}>
-          <h2>Replly Comment</h2>
+          <h2>Reply Comment</h2>
           <form noValidate autoComplete='off' className={classes.form}>
             <TextField
               className={classes.title}
@@ -128,7 +128,7 @@ function CreatePostModal() {
                 fullWidth
                 onClick={onSubmit}
               >
-                 Repply 
+                 Reply 
               </Button>
             </div>
           </form>

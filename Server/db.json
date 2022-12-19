@@ -259,50 +259,6 @@
       "description": "TOM FORD's eau de parfum captures the essence of one of the most coveted raw ingredients in the world: Oud Wood. "
     },
     {
-      "id": 7,
-      "oID": "1647597276922672",
-      "image": "https://cache.mrporter.com/variants/images/1647597276922672/in/w560_q60.jpg",
-      "name": "Argyle Mohair-Blend Sweater",
-      "price": 775,
-      "discount": 5,
-      "slug": "argyle-mohair-blend-sweater",
-      "star": 0,
-      "totalVote": 0,
-      "designer": "CELINE HOMME",
-      "category": "clothing",
-      "cateId": 1,
-      "size": [
-        {
-          "label": "S",
-          "value": "s"
-        },
-        {
-          "label": "M",
-          "value": "m"
-        },
-        {
-          "label": "L",
-          "value": "l"
-        },
-        {
-          "label": "XL",
-          "value": "xl"
-        }
-      ],
-      "gallery": [
-        "https://cache.mrporter.com/variants/images/1647597276922672/in/w560_q60.jpg",
-        "https://cache.mrporter.com/variants/images/1647597276922672/e1/w208_q60.jpg",
-        "https://cache.mrporter.com/variants/images/1647597276922672/fr/w208_q60.jpg",
-        "https://cache.mrporter.com/variants/images/1647597276922672/bk/w208_q60.jpg",
-        "https://cache.mrporter.com/variants/images/1647597276922672/cu/w208_q60.jpg"
-      ],
-      "colors": [
-        "Black"
-      ],
-      "quantity": 65,
-      "description": "CELINE HOMME's sweater is made from fuzzy mohair-blend with touches of wool and patterned with a classic argyle motif. It has a comfortably slim fit and looks equally smart with chinos or jeans."
-    },
-    {
       "id": 8,
       "oID": "1647597293554117",
       "image": "https://cache.mrporter.com/variants/images/1647597293554117/in/w560_q60.jpg",
@@ -1682,18 +1638,6 @@
       "create_date": "2022-07-13 10:10:10"
     },
     {
-      "id": 5,
-      "content": "dasdasdas",
-      "creator": {
-        "id": "1",
-        "name": "Vũ Đức Hậu",
-        "phone": "0326773851"
-      },
-      "replyforId": null,
-      "productId": 7,
-      "create_date": "2022-12-12 18:05:44"
-    },
-    {
       "id": 6,
       "content": "dasdasdas",
       "creator": {
@@ -1704,18 +1648,6 @@
       "replyforId": null,
       "productId": 2,
       "create_date": "2022-12-12 18:09:29"
-    },
-    {
-      "id": 7,
-      "content": "dadadaaaaaaaaaaaaaaa",
-      "creator": {
-        "id": "1",
-        "name": "Vũ Đức Hậu",
-        "phone": "0326773851"
-      },
-      "replyforId": null,
-      "productId": 2,
-      "create_date": "2022-12-12 18:17:59"
     },
     {
       "id": 8,

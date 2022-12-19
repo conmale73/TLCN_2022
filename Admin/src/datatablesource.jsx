@@ -49,8 +49,8 @@ export const commentColumns = [
         valueGetter: (params) => {
             let result = [];
             if (params.row.creator) {
-                if (params.row.creator.username) {
-                    result.push(params.row.creator.username);
+                if (params.row.creator.name) {
+                    result.push(params.row.creator.name);
                 }
             } else {
                 result = ["Unknown"];
@@ -76,8 +76,8 @@ export const commentColumns = [
         valueGetter: (params) => {
             let result = [];
             if (params.row.creator) {
-                if (params.row.creator.replyforId) {
-                    result.push(params.row.creator.replyforId);
+                if (params.row.replyforId) {
+                    result.push(params.row.replyforId);
                 }
             } else {
                 result = ["Unknown"];
