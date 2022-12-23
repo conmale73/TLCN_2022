@@ -15,10 +15,10 @@
       "id": 11050,
       "name": "Test User",
       "address": {
-        "homeAdd": "9/1 đường số 7",
-        "ward": "Linh Chiểu",
-        "district": "Thủ Đức",
-        "city": "Hồ Chí Minh"
+        "homeAdd": "aaaaaaaaa",
+        "ward": "Phường Đồng Xuân",
+        "district": "Quận Hoàn Kiếm",
+        "city": "Hà Nội"
       },
       "phone": "0123456789",
       "createdAt": 1670382491444
@@ -57,27 +57,59 @@
       },
       "phone": "0111111111",
       "create_date": "22:12 12/12, 2022"
+    },
+    {
+      "id": 25640,
+      "name": "Khách hàng",
+      "address": {
+        "homeAdd": "",
+        "ward": "",
+        "district": "",
+        "city": ""
+      },
+      "phone": "111111111",
+      "create_date": "03:12 12/22, 2022"
+    },
+    {
+      "id": 86734,
+      "name": "Khách hàng",
+      "address": {
+        "homeAdd": "",
+        "ward": "",
+        "district": "",
+        "city": ""
+      },
+      "phone": "326773851",
+      "create_date": "03:12 12/22, 2022"
+    },
+    {
+      "id": 41748,
+      "name": "Khách hàng",
+      "address": {
+        "homeAdd": "aaa",
+        "ward": "Xã Bàu Lâm",
+        "district": "Huyện Xuyên Mộc",
+        "city": "Bà Rịa - Vũng Tàu"
+      },
+      "phone": "123456789",
+      "create_date": "03:12 12/22, 2022"
     }
   ],
   "products": [
     {
       "id": 1,
       "oID": "1647597276922690",
-      "image": "https://cache.mrporter.com/variants/images/1647597276922690/in/w358_q60.jpg",
+      "image": "https://cache.mrporter.com/variants/images/1647597276922690/in/w560_q60.jpg",
       "name": "Double-Breasted Cashmere Coat",
       "price": 6100,
       "discount": 12,
       "slug": "1-double-breasted-cashmere-coat",
-      "star": 0,
-      "totalVote": 0,
+      "star": 4.1,
+      "totalVote": 23,
       "designer": "CELINE HOMME",
       "category": "clothing",
-      "cateId": 0,
+      "cateId": 1,
       "size": [
-        {
-          "label": "S",
-          "value": "s"
-        },
         {
           "label": "M",
           "value": "m"
@@ -89,6 +121,10 @@
         {
           "label": "XL",
           "value": "xl"
+        },
+        {
+          "label": "XXL",
+          "value": "xxl"
         }
       ],
       "gallery": [
@@ -102,7 +138,9 @@
         "White"
       ],
       "quantity": 100,
-      "description": "CELINE HOMME's coat is tailored from off-white cashmere giving it a soft and undeniably luxurious handle. It's cut in a classic double-breasted profile and has notch lapels that sit a little lower than usual for a nice point of differentiation."
+      "description": "CELINE HOMME's coat is tailored from off-white cashmere giving it a soft and undeniably luxurious handle. It's cut in a classic double-breasted profile and has notch lapels that sit a little lower than usual for a nice point of differentiation.",
+      "url": "/clothing/1-double-breasted-cashmere-coat",
+      "new": true
     },
     {
       "id": 2,
@@ -970,52 +1008,6 @@
       "createdAt": 1670386638431
     },
     {
-      "id": 5787,
-      "oID": "1647597302967699",
-      "image": [
-        "https://cache.mrporter.com/variants/images/1647597302967699/in/w560_q60.jpg"
-      ],
-      "name": "Straight-Leg Shell Trousers",
-      "price": 425,
-      "slug": "straight-leg-shell-trousers",
-      "discount": 10,
-      "star": 0,
-      "totalVote": 0,
-      "designer": "SAIF UD DEEN",
-      "new": true,
-      "description": "EXCLUSIVE AT MR PORTER and in partnership with Klarna. SAIF UD DEEN is the youngest of the designers in MR PORTER's FUTURES programme. He describes this exclusive collection as \"an autobiography of sorts, a culmination of my own experiences and how faith and fashion intertwine with the urban environment\". These trousers are cut from durable shell for a straight-leg fit and equipped with additional zipped pockets on the mid-thigh.",
-      "gallery": [
-        "https://cdn.tgdd.vn/Products/Images/42/247364/Slider/2-1020x570.jpg",
-        "https://cdn.tgdd.vn/Products/Images/42/247364/Slider/2-1020x570.jpg",
-        "https://cdn.tgdd.vn/Products/Images/42/247364/Slider/3-1020x570.jpg",
-        "https://cdn.tgdd.vn/Products/Images/42/247364/Slider/SamsungGalaxyM53-1020x570.jpg",
-        "https://cdn.tgdd.vn/Products/Images/42/247364/Slider/5-1020x570.jpg",
-        "https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/bg_csmh_tgdd-min.png?v=11"
-      ],
-      "color": [
-        "Black"
-      ],
-      "size": [
-        {
-          "label": "39",
-          "value": "39"
-        },
-        {
-          "label": "40",
-          "value": "40"
-        },
-        {
-          "label": "41",
-          "value": "41"
-        },
-        {
-          "label": "42",
-          "value": "42"
-        }
-      ],
-      "createdAt": 1670386676579
-    },
-    {
       "id": 588,
       "oID": "43769801096066383",
       "image": [
@@ -1586,6 +1578,78 @@
         ]
       },
       "createdAt": "12/09/2022"
+    },
+    {
+      "id": "1SP80359VV973710W",
+      "totalPrice": 1922.8,
+      "totalQuantity": 2,
+      "customer": {
+        "id": 11050,
+        "name": "Test User",
+        "phone": "0123456789",
+        "address": {
+          "homeAdd": "aaaaaaaaa",
+          "ward": "Phường Đồng Xuân",
+          "district": "Quận Hoàn Kiếm",
+          "city": "Hà Nội"
+        }
+      },
+      "status": "Received",
+      "order_items": {
+        "data": [
+          {
+            "id": 1,
+            "image": "https://cache.mrporter.com/variants/images/1647597293554117/in/w560_q60.jpg",
+            "name": "Virgin Wool-Blend Coat",
+            "discount": 5,
+            "slug": "virgin-wool-blend-coat",
+            "selectedSize": {
+              "label": "L",
+              "value": "l"
+            },
+            "price": 1012,
+            "designer": "BOGLIOLIE",
+            "quantity": 2
+          }
+        ]
+      },
+      "createdAt": "12/21/2022"
+    },
+    {
+      "id": "87N13123Y2400264R",
+      "totalPrice": 5368,
+      "totalQuantity": 1,
+      "customer": {
+        "id": 11050,
+        "name": "Test User",
+        "phone": "0123456789",
+        "address": {
+          "homeAdd": "aaaaaaaaa",
+          "ward": "Phường Đồng Xuân",
+          "district": "Quận Hoàn Kiếm",
+          "city": "Hà Nội"
+        }
+      },
+      "status": "Cancelled",
+      "order_items": {
+        "data": [
+          {
+            "id": 1,
+            "name": "Double-Breasted Cashmere Coat",
+            "image": "https://cache.mrporter.com/variants/images/1647597276922690/in/w358_q60.jpg",
+            "designer": "CELINE HOMME",
+            "price": 6100,
+            "discount": 12,
+            "slug": "1-double-breasted-cashmere-coat",
+            "quantity": 1,
+            "selectedSize": {
+              "label": "M",
+              "value": "m"
+            }
+          }
+        ]
+      },
+      "createdAt": "12/21/2022"
     }
   ],
   "comments": [

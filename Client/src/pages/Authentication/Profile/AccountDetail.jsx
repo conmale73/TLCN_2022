@@ -36,6 +36,9 @@ const AccountDetail = () => {
         console.log("datapost: ", dataPost);
         localStorage.setItem("user", JSON.stringify(dataPost));
         updateUsers(dispact, dataPost);
+
+        alert("Update Profile Success")
+        window.location.reload();
     };
 
     
@@ -61,7 +64,7 @@ const AccountDetail = () => {
                     className="text-yellow-300"
                     onClick={(e) => setEdit((old) => !old)}
                 >
-                    {edit ? "Hủy" : "Sửa"}
+                    {edit ? "Cancel" : "Edit"}
                 </button>
             </div>
 
@@ -119,7 +122,7 @@ const AccountDetail = () => {
                             disabled={!edit}
                             className="bg-indigo-500 cursor-pointer text-white px-7 py-3  rounded-md "
                         >
-                            CẬP NHẬT
+                            UPDATE
                         </button>
                     </>
                 )}

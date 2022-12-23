@@ -296,7 +296,7 @@ const NewPhone = ({ inputs, title }) => {
             return response.json(); // parses JSON response into native JavaScript objects
         }
 
-        postData(" http://localhost:3000/products", dataPost).then(
+        postData(" http://localhost:3004/products", dataPost).then(
             (data) => {
                 console.log(data); // JSON data parsed by `data.json()` call
                 alert("Add product success!");

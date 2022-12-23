@@ -376,7 +376,7 @@ const EditProduct = ({ inputs, title }) => {
         }
 
         postData(
-            " http://localhost:3000/products/" + data[0].id,
+            " http://localhost:3004/products/" + data[0].id,
             dataPhone
         ).then((data) => {
             console.log(data); // JSON data parsed by `data.json()` call

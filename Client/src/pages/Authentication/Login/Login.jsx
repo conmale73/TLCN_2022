@@ -53,7 +53,7 @@ const Login = () => {
                 })
                 .catch((error) => {
                     console.log("SMS not sent");
-
+                    alert("Something went wrong, please try again")
                     console.log(error);
                     appVerifier.clear();
                 });
@@ -109,13 +109,14 @@ const Login = () => {
             .catch((error) => {
                 // User couldn't sign in (bad verification code?)
                 // ...
+                alert("OTP is not correct");
             });
     };
 
     const changeNum = (e) => {
         e.preventDefault();
         setFlag(false);
-        grecaptcha.reset(window.recaptchaWidgetId);
+        window.grecaptcha.reset();
     };
     return (
         // <div className={styles.login}>
@@ -162,12 +163,19 @@ const Login = () => {
                 <form id="frmGetVerifyCode" onSubmit={(e) => handleSubmit(e)}>
                     <div id="sign-in-button" style={{ display: "none" }}></div>
                     <input
-                        type="tel"
+                        type="number"
                         value={txtPhoneNumber}
                         placeholder="Please enter your phone number"
                         autoComplete="off"
-                        maxLength="10"
                         onChange={(e) => setTxtPhoneNumber(e.target.value)}
+                        onInput={(e) => {
+                            e.target.value = Math.max(
+                                0,
+                                parseInt(e.target.value)
+                            )
+                                .toString()
+                                .slice(0, 9);
+                        }}
                         className={styles.input}
                     ></input>
                     <button
@@ -189,12 +197,19 @@ const Login = () => {
                 </span>
                 <form id="frmSubmitVerifyCode" onSubmit={(e) => submitOTP(e)}>
                     <input
-                        type="number"
-                        maxLength="6"
+                        type="number"                        
                         value={otp}
                         placeholder="Enter OTP"
                         onChange={(e) => setOtp(e.target.value)}
                         className={styles.input}
+                        onInput={(e) => {
+                            e.target.value = Math.max(
+                                0,
+                                parseInt(e.target.value)
+                            )
+                                .toString()
+                                .slice(0, 6);
+                        }}
                     ></input>
                     <button className={styles.btn} id="submitOTP">
                         CONTINUE

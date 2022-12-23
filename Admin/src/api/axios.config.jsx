@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseURL = {
 	auth: 'https://jwt.conmale73.repl.co',
-	data: 'http://localhost:3000'
+	data: 'http://localhost:3004'
 }
 
 const axiosInstance = axios.create({

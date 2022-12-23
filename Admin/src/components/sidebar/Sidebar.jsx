@@ -72,12 +72,6 @@ const Sidebar = () => {
                             <span>Delivery</span>
                         </li>
                     </Link>
-                    <Link to="/reviews" style={{ textDecoration: "none" }}>
-                        <li>
-                            <ThumbUpIcon className="icon" />
-                            <span>Review</span>
-                        </li>
-                    </Link>
                     <Link to="/comments" style={{ textDecoration: "none" }}>
                         <li>
                             <ChatIcon className="icon" />
