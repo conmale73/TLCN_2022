@@ -27,7 +27,7 @@ const Sidebar = () => {
     const logout = () => {
         if(confirm("Bạn có muốn thoát không?")) {
             localStorage.removeItem('token')
-            window.location.reload()
+            window.location.href = '/login'
         } 
     };
     return (
