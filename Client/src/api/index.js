@@ -1,1 +1,0 @@
-export { axiosClient } from './axios.config';
