@@ -43,7 +43,7 @@ const Comment = ({ comment, replies, key }) => {
         }
     };
     let body;
-    if (comment.creator.phone === "0111111111") {
+    if (comment.creator.phone === "0111111111" || comment.creator.phone === "111111111") {
         body = (
             <div className={styles.comment}>
                 <div className={styles.name}>

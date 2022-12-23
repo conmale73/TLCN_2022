@@ -36,7 +36,7 @@ const Login = () => {
             phoneNumber === "" ||
             phoneNumber === undefined
         ) {
-            alert("Số điện thoại không hợp lệ");
+            alert("Phone number is not valid");
         } else {
             setFlag(true);
             configureCaptcha();
@@ -119,40 +119,6 @@ const Login = () => {
         window.grecaptcha.reset();
     };
     return (
-        // <div className={styles.login}>
-        //     <div className={styles.container}>
-        //         {alert && (
-        //                 <p className={styles.alert}>Đăng nhập thất bại</p>
-        //             )}
-        //         <form onSubmit={(e) => handleSubmit(e)}>
-        //             <h1>Sign In</h1>
-        //             <input
-        //                 type="text"
-        //                 placeholder="Username"
-        //                 value={username}
-        //                 name="username"
-        //                 onChange={onChangeLoginForm}
-        //             />
-        //             <input
-        //                 type="password"
-        //                 placeholder="Password"
-        //                 value={password}
-        //                 name="password"
-        //                 onChange={onChangeLoginForm}
-        //             />
-
-        //             <button className={styles.btn}>Login</button>
-        //             <Divider />
-        //         </form>
-        //         <p>Don't have an account?</p>
-        //         <Link to="/register">
-        //             <button className={styles.btnRegister}>
-        //                 Create Account
-        //             </button>
-        //         </Link>
-        //     </div>
-        // </div>
-
         <div className={styles.login}>
             <div
                 className={clsx("d1", "step1")}
@@ -163,19 +129,12 @@ const Login = () => {
                 <form id="frmGetVerifyCode" onSubmit={(e) => handleSubmit(e)}>
                     <div id="sign-in-button" style={{ display: "none" }}></div>
                     <input
-                        type="number"
+                        type="text"
                         value={txtPhoneNumber}
                         placeholder="Please enter your phone number"
                         autoComplete="off"
                         onChange={(e) => setTxtPhoneNumber(e.target.value)}
-                        onInput={(e) => {
-                            e.target.value = Math.max(
-                                0,
-                                parseInt(e.target.value)
-                            )
-                                .toString()
-                                .slice(0, 9);
-                        }}
+                        
                         className={styles.input}
                     ></input>
                     <button
